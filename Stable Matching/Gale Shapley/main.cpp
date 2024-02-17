@@ -3,7 +3,7 @@
 using namespace std;
 
 int main(){
-    ifstream inFile("/Users/williambach/Desktop/tempgit/algos/Stable Matching/Gale Shapley/data.txt");
+    ifstream inFile("data.txt");
     GaleShapley g;
     if(g.readFile(inFile)){
         if(g.runGaleShapleyAlgo()){

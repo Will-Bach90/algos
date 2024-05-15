@@ -70,7 +70,7 @@ class Stack {
                 cout << top->getValue() << endl;
                 return top->getValue();
             }
-            return -1;
+            return INT_MIN;
         }
 
         void push(int val) {
@@ -129,10 +129,10 @@ class Queue {
                 cout << front->getValue() << endl;
                 return front->getValue();
             }
-            return -1;
+            return INT_MIN;
         }
 
-        void pushBack(int val) {
+        void enqueue(int val) {
             Node* newNode = new Node(val);
             if(length == 0){
                 front = newNode;
@@ -144,7 +144,7 @@ class Queue {
             length++;
         }
 
-        void pop() {
+        void dequeue() {
             if(length == 0) return;
             Node* temp = front;
             if(length == 1) {
@@ -178,8 +178,8 @@ int main() {
     st->printAll();
     cout << "===================" << endl;
     Queue* q = new Queue(1);
-    q->pushBack(2);
-    q->pushBack(3);
-    q->pushBack(4);
+    q->enqueue(2);
+    q->enqueue(3);
+    q->enqueue(4);
     q->printAll();
 }
